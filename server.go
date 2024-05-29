@@ -8,7 +8,10 @@ import (
     "time"
 )
 
-// LoggingMiddleware logs the details of each request
+var PORT string
+PORT = "8080"
+
+// LoggingMiddleware logs the details of each request and prints them out to cmdline
 func LoggingMiddleware(next http.Handler) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         start := time.Now()
@@ -45,7 +48,7 @@ func FileServerWith404(root http.FileSystem) http.Handler {
 
         // Check if the path is a directory
         if fi.IsDir() {
-            // Serve the index.html file if the directory is requested
+            // Serve the index.html file if the directory is requested (central operation)
             index := filepath.Join(path, "index.html")
             _, err := root.Open(index)
             if err != nil {
@@ -60,11 +63,13 @@ func FileServerWith404(root http.FileSystem) http.Handler {
 }
 
 func main() {
+    // Directory of service
     fs := http.Dir("./static")
     http.Handle("/", LoggingMiddleware(FileServerWith404(fs)))
 
-    log.Println("Listening on :8080...")
-    err := http.ListenAndServe(":8080", nil)
+    // Listen on specified port
+    log.Println("Listening on 8080...")
+    err := http.ListenAndServe(":"+PORT, nil)
     if err != nil {
         log.Fatal(err)
     }
