@@ -1,151 +1,24 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* Set the background color of the entire page to black */
 body {
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: black;
+    color: #74ef55; /* Set the default text color to green */
+    font-family: Arial, sans-serif; /* Set the default font */
 }
 
-/* Container */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Header */
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header ul {
-    padding: 0;
-    list-style: none;
-}
-
-header li {
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header #branding {
-    float: left;
-}
-
-header #branding h1 {
-    margin: 0;
-}
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-/* Showcase */
-#showcase {
-    min-height: 400px;
-    background: url('showcase.jpg') no-repeat 0 -400px;
+/* Style for the main heading */
+h1 {
+    color: #74ef55;
     text-align: center;
-    color: #fff;
 }
 
-#showcase h1 {
-    margin-top: 100px;
-    font-size: 55px;
-    margin-bottom: 10px;
+/* Style for paragraph text */
+p {
+    color: #74ef55;
 }
 
-#showcase p {
-    font-size: 20px;
-}
-
-/* Newsletter */
-#newsletter {
-    padding: 15px;
-    color: #fff;
-    background: #0779e4;
-}
-
-#newsletter h1 {
-    float: left;
-}
-
-#newsletter form {
-    float: right;
-    margin-top: 15px;
-}
-
-#newsletter input[type="email"] {
-    padding: 4px;
-    height: 25px;
-    width: 250px;
-}
-
-/* Boxes */
-#boxes {
-    margin-top: 20px;
-}
-
-#boxes .box {
-    float: left;
-    text-align: center;
-    width: 30%;
+/* Add a border and padding to divs */
+div {
+    border: 2px solid green;
     padding: 10px;
-}
-
-#boxes .box img {
-    width: 90px;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    margin-top: 20px;
-    color: #fff;
-    background-color: #333;
-    text-align: center;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    header #branding,
-    header nav,
-    header nav li,
-    #newsletter h1,
-    #newsletter form {
-        float: none;
-        text-align: center;
-        width: 100%;
-    }
-
-    #showcase h1 {
-        font-size: 40px;
-    }
-
-    #newsletter input[type="email"] {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    #boxes .box {
-        width: 100%;
-        padding: 10px;
-    }
+    margin: 10px;
 }

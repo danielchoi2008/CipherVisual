@@ -8,8 +8,8 @@ import (
     "time"
 )
 
-var PORT string
-PORT = "8080"
+// Port is set to 8080
+const PORT string = "8080"
 
 // LoggingMiddleware logs the details of each request and prints them out to cmdline
 func LoggingMiddleware(next http.Handler) http.Handler {
@@ -51,6 +51,7 @@ func FileServerWith404(root http.FileSystem) http.Handler {
             // Serve the index.html file if the directory is requested (central operation)
             index := filepath.Join(path, "index.html")
             _, err := root.Open(index)
+            // Handle error
             if err != nil {
                 NotFoundHandler(w, r)
                 return
